@@ -3,4 +3,12 @@
   "extends": [
     "config:recommended"
   ]
+  "packageRules": [
+    {
+      "matchManagers": ["helmv3"],
+      "matchPaths": ["charts/my-app/**"],
+      "enabled": true
+    }
+  ],
+  "rangeStrategy": "bump"
 }
