@@ -13,7 +13,8 @@ module.exports = {
   allowScripts: true,
   allowedCommands: [
     "^make update-date$",
-    "^uv run python updater.py$"
+    "^uv run python updater.py$",
+    "^uvx cowsay$"
   ],
 
   // PR Settings
@@ -26,7 +27,8 @@ module.exports = {
     {
       postUpgradeTasks: {
         commands: [
-          "make update-date"
+          "make update-date",
+          "make hello",
         ],
         fileFilters: [
           "date.info"
