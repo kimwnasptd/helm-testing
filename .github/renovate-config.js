@@ -2,6 +2,11 @@ module.exports = {
   // Global settings
   endpoint: "https://api.github.com/",
   repositories: ["kimwnasptd/helm-testing"],
+  onboarding: false,
+
+  enabledManagers: [
+    "helmv3"
+  ],
 
   allowScripts: true,
   allowedCommands: [
