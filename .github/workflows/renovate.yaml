@@ -3,7 +3,7 @@ name: Renovate
 on:
   schedule:
     # Run every 2 hours (this is a large repo, avoid excessive runs)
-    - cron: "0 */2 * * *"
+    - cron: "0/2 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -23,9 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      # - name: Install uv
-      #   uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-      #
+      - name: Install uv
+        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+
       - uses: renovatebot/github-action@a7e89c349a53ab0c9d8458eb85f4b415e55848e7 # v44.2.3
         with:
           configurationFile: .github/renovate-config.js
