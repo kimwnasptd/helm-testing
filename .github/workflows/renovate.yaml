@@ -26,17 +26,11 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
 
-      # - name: Get Renovate token from GitHub App
-      #   uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2
-      #   id: app-token
-      #   with:
-      #     app-id: ${{ vars.RENOVATE_APP_ID }}
-      #     private-key: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
-
       - uses: renovatebot/github-action@a7e89c349a53ab0c9d8458eb85f4b415e55848e7 # v44.2.3
         with:
           configurationFile: .github/renovate-config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
+          repositories: ${{ github.repository }}
         env:
           LOG_LEVEL: debug
           RENOVATE_DRY_RUN: ${{ inputs.dry_run && 'full' || '' }}
