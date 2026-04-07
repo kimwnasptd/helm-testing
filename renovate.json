@@ -1,27 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
-  ],
-  "allowScripts": true,
-  "allowedCommands": [
-    "^make update-date$",
-    "^uv run python updater.py$"
-  ],
-  "packageRules": [
-    {
-      "matchManagers": ["helmv3"],
-      "matchPaths": ["charts/my-app/**"],
-      "enabled": true
-    },
-    "postUpgradeTasks": {
-      "commands": [
-        "make update-date"
-      ],
-      "fileFilters": [
-        "date.info"
-      ],
-      "executionMode": "branch"
-    }
+    "config:recommended",
+    ":preset:extractAllVersioning"
   ]
 }
