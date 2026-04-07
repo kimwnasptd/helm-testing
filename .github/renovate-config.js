@@ -3,6 +3,8 @@ module.exports = {
   endpoint: "https://api.github.com/",
   repositories: ["kimwnasptd/helm-testing"],
   onboarding: false,
+  prHourlyLimit: 0,
+  prConcurrentLimit: 0,
 
   enabledManagers: [
     "helmv3"
